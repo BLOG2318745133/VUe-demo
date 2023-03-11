@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>Vue里的数据代理</title>
+</head>
+
+<body>
+<div id="root">
+    <h3>我的名字：{{name}}</h3>
+    <h3>我的地址：{{address}}</h3>
+
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let data = {
+        name: "何朋伟",
+        address: "安徽新华学院"
+    }
+    const vm = new Vue({
+        el: "#root",
+        data: data
+    })
+</script>
+
+</body>
+</html>

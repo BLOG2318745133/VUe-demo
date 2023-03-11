@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>天气案例</title>
+
+    <!--引入Vue-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+<div id="root">
+    <h2>今天天气很{{info}}</h2>
+    <input type="button" value="切换天气" @click="changwheather">
+</div>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: "#root",
+        data: {
+            staus: true,
+            xy: 1
+        },
+        //计算属性
+        computed: {
+            info() {
+                return this.staus ? "炎热" : "凉爽"
+            }
+        },
+        methods: {
+            changwheather() {
+                this.staus = !this.staus
+                this.xy++
+            }
+        },
+        //监视器
+        //     watch:{
+        //         info:{
+        //             immediate:true,//初始化时让handler调用一下
+        //             handler(newValue,oldValue){
+        //                 console.log("我被修改了",newValue,oldValue);
+        //             }
+        //         }
+        //     }
+    })
+    vm.$watch("ssss", {
+        immediate: true,//初始化时让handler调用一下
+        handler(newValue, oldValue) {
+            console.log("我被修改了", newValue, oldValue);
+        }
+    })
+</script>
+</body>
+</html>

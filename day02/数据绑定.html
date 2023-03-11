@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>数据绑定</title>
+</head>
+
+<body>
+<div id="app">
+    单向数据绑定
+    <label>
+        <input type="text" value="单向数据绑定" v-bind:value="name">
+    </label>
+    <br>
+    双向数据绑定
+    <label>
+        <input type="text" value="单向数据绑定" v-model:value="name">
+    </label>
+    <br>
+    <h2 v-model:x="name">
+        我是何朋伟
+    </h2>
+
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            name: "blog",
+        },
+        methods: {}
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>计算属性</title>
+
+    <!--引入Vue-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+<div id="root">
+    姓:<label><input type="text" v-model:value="firstname"></label>
+    <br>
+    名:<label><input type="text" v-model:value="lastname"></label>
+    <br>
+    姓名：
+    <span>
+        {{firstname.slice(0,3)}}-{{lastname}}
+    </span>
+</div>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el:"#root",
+        data:{
+            firstname:"张",
+            lastname:"胡",
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

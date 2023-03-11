@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>MVVM模型</title>
+</head>
+
+<body>
+<div id="root">
+    <h2>姓名：{{name}}</h2>
+    <h2>学校：{{school}}</h2>
+    <h2>测试案例1：{{2 + 9}}</h2>
+    <h2>测试案例2：{{$options}}</h2>
+    <h2>测试案例3：{{$emit}}</h2>
+    <h2>测试案例3：{{_c}}</h2>
+
+
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+    var vm = new Vue({
+        el: "#root",
+        data: {
+            name: "何朋伟",
+            school: "安徽新华学院",
+        }
+    })
+    console.log(vm)
+</script>
+</body>
+</html>

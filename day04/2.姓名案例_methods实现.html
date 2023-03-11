@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>姓名案例_methods实现</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<!-- 准备好一个容器-->
+<div id="root">
+    姓:<label><input type="text" v-model:value="firstName"></label>
+    <br>
+    名:<label><input type="text" v-model:value="lastName"></label>
+    <br>
+    全名：<span>{{firstName}}-{{lastName}}</span>
+    <input type="button" value="点我提示信息" @click="FullName()">
+</div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip= false  //阻止 vue 在启动时生成生产提示。
+
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: '张',
+            lastName: '三'
+        },
+        methods: {
+            FullName() {
+                alert("1");
+                console.log("@@@",this)
+                return this.firstName+"---"+this.lastName
+            }
+        },
+    })
+</script>
+</html>
